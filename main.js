@@ -1,0 +1,1 @@
+(()=>{console.log("hello I am from src folder");let e=document.querySelector("#content"),t=document.createElement("p");t.textContent="This is wonderful page";let n=document.createElement("span");n.textContent="Yes it is ",e.appendChild(t),e.appendChild(n)})();
