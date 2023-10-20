@@ -81,21 +81,29 @@ export default function menu(approot) {
         `Remove the lid and cook, turning frequently, until brown and crisp on all sides, about 10 more minutes.`
     ]
 
-    let menuList = [menu1, menu2, menu3];
+    let menuList = [menu1,menu3, menu2 ];
 
     let div = document.createElement('div');
 
     menuList.forEach(e => {
-        let headerOne = document.createElement('h1');
+        let subDiv = document.createElement('div');
+        let imgSection = document.createElement('div');
+        imgSection.className= "imgSection"
+        let headerOne = document.createElement('h2');
         headerOne.textContent = e.heading[0];
-        div.appendChild(headerOne);
+        imgSection.appendChild(headerOne);
         let image = document.createElement('img');
         image.src = e.imgDetail[0];
         image.alt = e.imgDetail[1];
-        div.appendChild(image);
+        imgSection.appendChild(image);
+        subDiv.appendChild(imgSection);
+
+
+        let ingredientsSection = document.createElement('div');
+        ingredientsSection.className= "ingredientsSection"
         let headerTwo = document.createElement('h2');
         headerTwo.textContent = e.heading[1];
-        div.appendChild(headerTwo);
+        ingredientsSection.appendChild(headerTwo);
 
         let ulIngredient = document.createElement('ul');
         e.ingredinents.forEach(i => {
@@ -103,11 +111,14 @@ export default function menu(approot) {
             li.textContent = i;
             ulIngredient.appendChild(li);
         })
-        div.appendChild(ulIngredient);
+        ingredientsSection.appendChild(ulIngredient);
+        subDiv.appendChild(ingredientsSection);
 
+        let stepsSection = document.createElement('div');
+        stepsSection.className= "stepSection"
         let headerThree = document.createElement('h2');
         headerThree.textContent = e.heading[2];
-        div.appendChild(headerThree);
+        stepsSection.appendChild(headerThree);
 
         let ulSteps = document.createElement('ul');
         e.step.forEach(i => {
@@ -115,7 +126,9 @@ export default function menu(approot) {
             li.textContent = i;
             ulSteps.appendChild(li);
         })
-        div.appendChild(ulSteps);
+        stepsSection.appendChild(ulSteps);
+        subDiv.appendChild(stepsSection);
+        div.appendChild(subDiv);
 
 
     });

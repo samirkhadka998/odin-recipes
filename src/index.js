@@ -7,6 +7,7 @@ let nav = ['Home', 'Menu','Contact']
 let content = document.querySelector('#content');
 
 let ul = document.createElement('ul');
+ul.className = "nav-Item"
 
 for (let i = 0; i < 3; i++) {
     let li = document.createElement('li');
