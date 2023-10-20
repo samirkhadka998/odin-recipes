@@ -18,8 +18,9 @@ for (let i = 0; i < 3; i++) {
 content.appendChild(ul)
 let approot = document.createElement('div');
 approot.className = "approot"
-approot.textContent = 'hi';
 content.appendChild(approot)
+
+menu(approot)
 
 let list = document.querySelectorAll('#content li');
 Array.from(list).forEach(li => {
