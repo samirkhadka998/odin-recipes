@@ -1,3 +1,5 @@
-export default function home(){
-    console.log('This is home')
+export default function home(approot){
+    let para = document.createElement('p');
+    para.textContent = 'This is home';
+    approot.appendChild(para);
 }

@@ -16,6 +16,10 @@ for (let i = 0; i < 3; i++) {
 }
 
 content.appendChild(ul)
+let approot = document.createElement('div');
+approot.className = "approot"
+approot.textContent = 'hi';
+content.appendChild(approot)
 
 let list = document.querySelectorAll('#content li');
 Array.from(list).forEach(li => {
@@ -24,15 +28,16 @@ Array.from(list).forEach(li => {
 
 function showContent(e) {
     console.log(e.target.textContent)
+    approot.textContent = '';
     switch (e.target.textContent) {
         case "Home":
-            home();
+            home(approot);
             break;
         case "Contact":
-            contact();
+            contact(approot);
             break;
         case "Menu":
-            menu();
+            menu(approot)
             break;
     
         default:

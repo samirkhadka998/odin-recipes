@@ -1,3 +1,5 @@
-export default function contact() {
-    console.log('This is contact');
+export default function contact(approot) {
+    let para = document.createElement('p');
+    para.textContent = 'This is contact';
+    approot.appendChild(para);
 }
